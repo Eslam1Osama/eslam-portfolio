@@ -634,6 +634,84 @@
             color: var(--primary-color);
             transform: translateY(-3px);
         }
+        
+        .copyright-button {
+            background: var(--surface-color);
+            border: 1px solid var(--border-color);
+            color: var(--text-secondary);
+            cursor: pointer;
+            font-size: 0.9rem;
+            font-weight: 500;
+            padding: 8px 16px;
+            border-radius: 50px;
+            margin-top: 1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .copyright-button:hover {
+            color: var(--primary-color);
+            background: var(--background-color);
+            border-color: var(--primary-color);
+            transform: translateY(-2px);
+        }
+
+        /* --- Copyright Notification --- */
+        .notification-card {
+            position: fixed;
+            bottom: -100%; /* Start off-screen */
+            left: 20px;
+            max-width: 400px;
+            background-color: var(--surface-color);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            padding: 1.5rem;
+            z-index: 1001;
+            transition: bottom 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+
+        .notification-card.show {
+            bottom: 20px;
+        }
+
+        .notification-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .notification-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .notification-title i {
+            color: var(--primary-color);
+        }
+
+        .notification-close {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--text-secondary);
+            cursor: pointer;
+            transition: transform 0.3s, color 0.3s;
+        }
+
+        .notification-close:hover {
+            color: var(--primary-color);
+            transform: rotate(90deg);
+        }
+        
+        [data-theme="dark"] .notification-card {
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+        }
+
 
         /* --- Responsive Design --- */
         @media (min-width: 992px) {
@@ -685,6 +763,17 @@
         @media (max-width: 768px) {
              section { padding: 4rem 0; }
              #home { padding: 4rem 1.5rem; }
+        }
+
+        @media (max-width: 480px) {
+            .notification-card {
+                max-width: calc(100% - 30px);
+                left: 15px;
+                bottom: -100%;
+            }
+            .notification-card.show {
+                bottom: 15px;
+            }
         }
 
     </style>
@@ -899,8 +988,20 @@
                 <li><a href="https://twitter.com" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a></li>
             </ul>
             <p>&copy; 2024 Eslam Osama Saad. Built with passion from scratch.</p>
+            <button class="copyright-button" id="copyright-btn">Copyright Notice</button>
         </div>
     </footer>
+    
+    <!-- Copyright Notification -->
+    <div class="notification-card" id="notification-card">
+        <div class="notification-header">
+            <h4 class="notification-title"><i class="fas fa-copyright"></i> Copyright Notice</h4>
+            <button class="notification-close" id="notification-close" aria-label="Close notification">&times;</button>
+        </div>
+        <p>
+            This website and its content, including all text, design, code, and images, are the intellectual property of Eslam Osama Saad and are protected by copyright law. Unauthorized reproduction or distribution is strictly prohibited.
+        </p>
+    </div>
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
@@ -913,6 +1014,9 @@
             const contactForm = document.getElementById('contact-form');
             const formMessage = document.getElementById('form-message');
             const submitButton = document.getElementById('submit-button');
+            const copyrightBtn = document.getElementById('copyright-btn');
+            const notificationCard = document.getElementById('notification-card');
+            const notificationCloseBtn = document.getElementById('notification-close');
 
             // --- THEME SWITCHER ---
             const currentTheme = localStorage.getItem('theme') || 'light';
@@ -976,15 +1080,11 @@
             contactForm.addEventListener('submit', async function(e) {
                 e.preventDefault();
 
-                // Prepare form data
                 const formData = new FormData(contactForm);
                 const object = {};
-                formData.forEach((value, key) => {
-                    object[key] = value;
-                });
+                formData.forEach((value, key) => { object[key] = value; });
                 const json = JSON.stringify(object);
 
-                // Update UI to show submission is in progress
                 submitButton.innerHTML = "Sending...";
                 submitButton.disabled = true;
                 formMessage.style.display = "none";
@@ -999,9 +1099,7 @@
                         },
                         body: json
                     });
-
                     const result = await response.json();
-
                     if (result.success) {
                         formMessage.innerHTML = "Thank you! Your message has been sent successfully.";
                         formMessage.classList.add('success');
@@ -1016,18 +1114,42 @@
                     formMessage.innerHTML = "An error occurred. Please try again later.";
                     formMessage.classList.add('error');
                 } finally {
-                    // Re-enable button and reset text
                     submitButton.innerHTML = "Send Message";
                     submitButton.disabled = false;
-                    // Make message visible
                     formMessage.style.display = "block";
-
-                    // Hide the message after 5 seconds
                     setTimeout(() => {
                         formMessage.style.display = "none";
                     }, 5000);
                 }
             });
+
+            // --- COPYRIGHT NOTIFICATION LOGIC ---
+            let notificationTimer;
+
+            const showNotification = () => {
+                clearTimeout(notificationTimer);
+                notificationCard.classList.add('show');
+                notificationTimer = setTimeout(hideNotification, 10000); // Auto-hide after 10 seconds
+            };
+
+            const hideNotification = () => {
+                notificationCard.classList.remove('show');
+            };
+            
+            copyrightBtn.addEventListener('click', showNotification);
+            
+            notificationCloseBtn.addEventListener('click', () => {
+                clearTimeout(notificationTimer); // Stop timer if closed manually
+                hideNotification();
+            });
+
+            // Show on first visit
+            if (!localStorage.getItem('hasSeenCopyrightNotice')) {
+                setTimeout(() => {
+                    showNotification();
+                    localStorage.setItem('hasSeenCopyrightNotice', 'true');
+                }, 2500); // Show after 2.5 seconds
+            }
         });
     </script>
 
