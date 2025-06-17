@@ -79,14 +79,7 @@
             color: var(--text-secondary);
             line-height: 1.7;
             font-size: 16px;
-            /* Added opacity for pre-load fade-in effect */
-            opacity: 0;
-            transition: background-color 0.3s, color 0.3s, opacity 0.6s ease-in-out;
-        }
-
-        /* This class is added by JS once the page is fully loaded */
-        body.loaded {
-            opacity: 1;
+            transition: background-color 0.3s, color 0.3s;
         }
 
         .container {
@@ -731,9 +724,6 @@
                 text-align: left;
                 justify-self: start;
             }
-             .home-content .intro-text {
-                margin: 0 0 2.5rem 0;
-            }
             .home-image-container {
                 order: 2; /* Image on the right */
                 width: 500px; /* Larger image on desktop */
@@ -741,7 +731,7 @@
             }
         }
 
-        /* --- FIXED: Adjusted breakpoint for mobile navigation --- */
+        /* --- UPDATED BREAKPOINT FOR CONSISTENCY --- */
         @media (max-width: 991px) {
              .navbar {
                 padding: 0 1.5rem;
@@ -762,11 +752,6 @@
 
             .nav-menu.active {
                 right: 0;
-                box-shadow: -10px 0 30px rgba(0,0,0,0.1);
-            }
-
-            [data-theme="dark"] .nav-menu.active {
-                 box-shadow: -10px 0 30px var(--shadow-color-dark);
             }
 
             .nav-toggle {
@@ -778,13 +763,10 @@
 
         @media (max-width: 768px) {
              section { padding: 4rem 0; }
-             #home { padding-top: 4rem; padding-bottom: 4rem; }
+             #home { padding: 4rem 1.5rem; }
         }
 
         @media (max-width: 480px) {
-             .navbar {
-                padding: 0 1rem;
-             }
             .notification-card {
                 max-width: calc(100% - 30px);
                 left: 15px;
@@ -803,11 +785,10 @@
     <header class="header">
         <nav class="navbar">
             <a href="#home" class="nav-logo">
-                <!-- UPDATED: Replaced placeholder with a more descriptive one. Replace with your actual logo path -->
-                <img src="https://placehold.co/120x40/00ACC1/FFFFFF?text=Eslam+O." alt="Eslam O. Logo" class="logo-img" onerror="this.onerror=null;this.src='https://placehold.co/120x40/00ACC1/FFFFFF?text=Logo';">
+                <img src="assets/logo.png" alt="Eslam O. Logo" class="logo-img">
                 <span>Eslam O.</span>
             </a>
-            <ul class="nav-menu" id="nav-menu">
+            <ul class="nav-menu">
                 <li class="nav-item"><a href="#home" class="nav-link active">Home</a></li>
                 <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
                 <li class="nav-item"><a href="#services" class="nav-link">Services</a></li>
@@ -832,7 +813,7 @@
             <div class="container">
                 <div class="home-container fade-in">
                     <div class="home-content">
-                        <span class="section-subtitle">Hello, I'm</span>
+                        <h3>Hello, I'm</h3>
                         <h1 class="name">Eslam Osama Saad</h1>
                         <p class="title">Engineer & Freelance Static Web Developer</p>
                         <p class="intro-text">
@@ -841,8 +822,7 @@
                         <a href="#contact" class="cta-button">Get In Touch</a>
                     </div>
                     <div class="home-image-container">
-                         <!-- UPDATED: Replaced placeholder with a more descriptive one. Replace with your actual photo path -->
-                        <img src="https://placehold.co/500x500/0A192F/CCD6F6?text=Eslam+O." alt="Eslam Osama Saad" class="home-photo" onerror="this.onerror=null;this.src='https://placehold.co/500x500/0A192F/CCD6F6?text=Profile+Pic';">
+                        <img src="assets/my_photo.jpg" alt="Eslam Osama Saad" class="home-photo">
                     </div>
                 </div>
             </div>
@@ -1025,17 +1005,11 @@
     </div>
 
     <script>
-        // --- PAGE LOAD FADE-IN ---
-        // This ensures all content including images is loaded before the page becomes visible.
-        window.onload = () => {
-            document.body.classList.add('loaded');
-        };
-
         document.addEventListener('DOMContentLoaded', function() {
             const doc = document.documentElement;
             const themeSwitcher = document.getElementById('theme-switcher');
             const navToggle = document.getElementById('nav-toggle');
-            const navMenu = document.getElementById('nav-menu');
+            const navMenu = document.querySelector('.nav-menu');
             const navLinks = document.querySelectorAll('.nav-link');
             const sections = document.querySelectorAll('main section');
             const contactForm = document.getElementById('contact-form');
@@ -1071,10 +1045,9 @@
             // --- ACTIVE NAV LINK ON SCROLL ---
             const activateNavLink = () => {
                 let currentSection = '';
-                const scrollPosition = window.pageYOffset;
                 sections.forEach(section => {
                     const sectionTop = section.offsetTop;
-                    if (scrollPosition >= sectionTop - 75) {
+                    if (pageYOffset >= sectionTop - 75) {
                         currentSection = section.getAttribute('id');
                     }
                 });
@@ -1083,11 +1056,11 @@
                     link.classList.remove('active');
                     if (link.getAttribute('href').includes(currentSection)) {
                         link.classList.add('active');
+
                     }
                 });
             };
             window.addEventListener('scroll', activateNavLink);
-            activateNavLink(); // Run on load
 
             // --- FADE-IN ANIMATION ON SCROLL ---
             const observer = new IntersectionObserver((entries) => {
