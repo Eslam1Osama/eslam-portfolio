@@ -169,6 +169,7 @@
             max-width: 1600px; /* Allow navbar content to be wider */
             margin: 0 auto;
             padding: 0 2.5rem;
+            position: relative; /* Needed for absolute positioning of mobile menu */
         }
 
         .nav-logo {
@@ -774,28 +775,76 @@
                 padding: 0 1.5rem;
              }
              .nav-menu {
-                position: fixed;
-                top: 70px;
-                right: -100%;
-                width: 100%;
-                height: calc(100vh - 70px);
-                background-color: var(--background-color);
+                position: absolute; /* Changed from fixed */
+                top: calc(100% + 10px); /* Position below the navbar */
+                right: 1.5rem;
+                width: 250px;
+                height: auto;
+                background-color: var(--surface-color);
                 flex-direction: column;
-                align-items: center;
-                justify-content: center;
-                gap: 2.5rem;
-                transition: right 0.4s ease-in-out;
+                align-items: flex-start;
+                gap: 0;
+                padding: 0.5rem;
+                border-radius: 12px;
+                box-shadow: 0 8px 20px hsla(var(--hue), 40%, 80%, 0.5);
+                border: 1px solid var(--border-color);
+                
+                /* Animation & Hiding */
+                opacity: 0;
+                visibility: hidden;
+                transform: translateY(-10px);
+                transform-origin: top right;
+                transition: transform 0.3s ease, opacity 0.3s ease, visibility 0s 0.3s;
             }
 
             .nav-menu.active {
-                right: 0;
+                opacity: 1;
+                visibility: visible;
+                transform: translateY(0);
+                transition: transform 0.3s ease, opacity 0.3s ease;
+            }
+
+            .nav-menu .nav-item {
+                width: 100%;
+            }
+
+            .nav-menu .nav-link {
+                display: block;
+                width: 100%;
+                padding: 0.75rem 1rem;
+                border-radius: 8px;
+            }
+
+            .nav-menu .nav-link:hover {
+                background-color: var(--background-color);
+            }
+            
+            .nav-menu .nav-link.active {
+                 background-color: var(--background-color);
+                 font-weight: 600;
+            }
+
+            .nav-menu .nav-link::after {
+                display: none; /* Hide underline on mobile */
+            }
+
+            .nav-menu .nav-item:last-child {
+                margin-top: 0.5rem;
+                padding-top: 0.5rem;
+                border-top: 1px solid var(--border-color);
+            }
+
+            .nav-menu .theme-switcher {
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                padding: 0.5rem 1rem;
             }
 
             .nav-toggle {
                 display: block;
+                z-index: 2; /* Make sure toggle is clickable */
             }
-            
-            .nav-link { font-size: 1.2rem; }
         }
 
         @media (max-width: 768px) {
@@ -1085,14 +1134,24 @@
             });
 
             // --- MOBILE NAVIGATION ---
+            const icon = navToggle.querySelector('i');
             navToggle.addEventListener('click', () => {
                 navMenu.classList.toggle('active');
+                if (navMenu.classList.contains('active')) {
+                    icon.classList.remove('fa-bars');
+                    icon.classList.add('fa-times');
+                } else {
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                }
             });
 
             navLinks.forEach(link => {
                 link.addEventListener('click', () => {
                     if (navMenu.classList.contains('active')) {
                         navMenu.classList.remove('active');
+                        icon.classList.remove('fa-times');
+                        icon.classList.add('fa-bars');
                     }
                 });
             });
