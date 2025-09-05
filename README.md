@@ -1,4 +1,4 @@
-# 🚀 EOPeak - Professional Portfolio
+# EOPeak - Professional Portfolio
 
 <div align="center">
 
@@ -391,6 +391,7 @@ This website and its content, including all text, design, code, and images, are 
 </div>
 
 </div>
+
 
 
 
