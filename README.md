@@ -28,7 +28,6 @@
 - [📱 Responsive Design](#-responsive-design)
 - [🚀 Performance & SEO](#-performance--seo)
 - [📂 Project Structure](#-project-structure)
-- [🔧 Installation & Setup](#-installation--setup)
 - [🎭 Themes & Customization](#-themes--customization)
 - [📞 Contact & Support](#-contact--support)
 - [📄 License & Copyright](#-license--copyright)
@@ -258,48 +257,6 @@ portfolio-website/
   - XML sitemap for crawler navigation
   - Robots.txt for crawling instructions
   - Google Search Console verification
-
----
-
-## 🔧 Installation & Setup
-
-### **🚀 Quick Start**
-
-1. **Clone the Repository**
-   ```bash
-   git clone https://github.com/your-username/portfolio.git
-   cd portfolio
-   ```
-
-2. **Open in Browser**
-   ```bash
-   # Simply open index.html in your web browser
-   open index.html
-   ```
-
-3. **Deploy to Web Server**
-   ```bash
-   # Upload all files to your web server
-   # No build process required - pure HTML/CSS/JS
-   ```
-
-### **🎯 Local Development**
-
-```bash
-# No dependencies required!
-# Just open index.html in any modern web browser
-
-# For development with live reload (optional):
-npx serve .
-```
-
-### **📋 Requirements**
-
-- ✅ **Modern Web Browser** (Chrome, Firefox, Safari, Edge)
-- ✅ **No Dependencies** - Pure HTML/CSS/JavaScript
-- ✅ **No Build Tools** - Ready to deploy immediately
-- ✅ **Cross-Platform** - Works on Windows, macOS, Linux
-
 ---
 
 ## 🎭 Themes & Customization
@@ -434,3 +391,4 @@ This website and its content, including all text, design, code, and images, are 
 </div>
 
 </div>
+
