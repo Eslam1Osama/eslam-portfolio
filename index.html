@@ -3,18 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="EOPeak - Professional Academic Web Converter & Educational Technologist. Transforming complex academic content into interactive, modern web experiences.">
+    <meta name="keywords" content="academic web converter, educational technology, interactive learning, digital content, web development, portfolio">
+    <meta name="author" content="Eslam Osama Saad">
+    <meta name="robots" content="index, follow">
+
+    <!-- Google Search Console Verification -->
+    <meta name="google-site-verification" content="iuY3MJE2lRfA4OuSwaFreCq-quTFP7b7XMGkP1JzOTw" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://eopeak.vercel.app/">
+    <meta property="og:title" content="EOPeak - Academic Web Converter - Educational Technologist">
+    <meta property="og:description" content="Transforming complex academic content into interactive, modern web experiences.">
+    <meta property="og:image" content="https://eopeak.vercel.app/assets/logo.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://eopeak.vercel.app/">
+    <meta property="twitter:title" content="EOPeak - Academic Web Converter - Educational Technologist">
+    <meta property="twitter:description" content="Transforming complex academic content into interactive, modern web experiences.">
+    <meta property="twitter:image" content="https://eopeak.vercel.app/assets/logo.png">
+
     <title>EOPeak - Academic Web Converter - Educational Technologist</title>
     
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/logo.png">
+    <link rel="shortcut icon" type="image/png" href="assets/logo.png">
+    <link rel="apple-touch-icon" href="assets/logo.png">
+
+    <!-- Sitemap -->
+    <link rel="sitemap" type="application/xml" href="/sitemap.xml">
+
+    <!-- Performance Optimizations -->
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    <link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
+    <link rel="dns-prefetch" href="//api.web3forms.com">
+
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
+
     <!-- Font Awesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
         /* --- CSS STYLES --- */
+
 
         /* --- Theme & Color Variables --- */
         :root {
@@ -29,6 +66,7 @@
             --shadow-color-light: hsl(var(--hue), 40%, 80%, 0.4);
             --border-color-light: hsl(var(--hue), 50%, 90%);
 
+
             /* Dark Mode Palette */
             --primary-color-dark: hsl(var(--hue), 85%, 55%); /* #4DD0E1 */
             --secondary-color-dark: hsl(var(--hue), 100%, 38%);
@@ -39,6 +77,7 @@
             --shadow-color-dark: rgba(2, 12, 27, 0.7);
             --border-color-dark: hsl(var(--hue), 30%, 25%);
         }
+
 
         [data-theme="light"] {
             --primary-color: var(--primary-color-light);
@@ -51,6 +90,7 @@
             --border-color: var(--border-color-light);
         }
 
+
         [data-theme="dark"] {
             --primary-color: var(--primary-color-dark);
             --secondary-color: var(--secondary-color-dark);
@@ -62,6 +102,7 @@
             --border-color: var(--border-color-dark);
         }
 
+
         /* --- Global Styles & Resets --- */
         * {
             margin: 0;
@@ -69,9 +110,12 @@
             box-sizing: border-box;
         }
 
+
         html {
             scroll-behavior: smooth;
+            overflow-x: hidden; /* Prevent horizontal scrollbar when console opens */
         }
+
 
         body {
             font-family: 'Poppins', sans-serif;
@@ -80,7 +124,9 @@
             line-height: 1.7;
             font-size: 16px;
             transition: background-color 0.3s, color 0.3s;
+            overflow-x: hidden; /* Prevent horizontal scrollbar when console opens */
         }
+
 
         .container {
             max-width: 1400px; /* Increased max-width for larger screens */
@@ -98,6 +144,7 @@
             margin-bottom: 3rem;
         }
 
+
         h2 {
             font-size: clamp(1.8rem, 5vw, 2.5rem);
             margin-bottom: 0;
@@ -105,6 +152,7 @@
             display: inline-block; /* Allows the ::after to be positioned correctly */
             padding-bottom: 15px;
         }
+
 
         h2::after {
             content: '';
@@ -117,6 +165,7 @@
             background: var(--primary-color);
             border-radius: 2px;
         }
+
 
         section {
             padding: 6rem 0;
@@ -143,30 +192,36 @@
             transform: translateY(0);
         }
 
+
         /* Hover Effects */
         .service-card, .project-card, .quality-checklist {
             transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
                         box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
+
         .service-card:hover, .project-card:hover {
             transform: translateY(-8px) scale(1.02);
             box-shadow: 0 12px 30px var(--shadow-color);
         }
+
 
         .quality-checklist:hover {
             transform: translateY(-5px);
             box-shadow: 0 8px 25px var(--shadow-color);
         }
 
+
         .checklist li, .skills-list li {
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
+
 
         .checklist li:hover {
             transform: translateX(8px);
             color: var(--primary-color);
         }
+
 
         .skills-list li:hover {
             transform: translateY(-3px) scale(1.05);
@@ -174,15 +229,18 @@
             color: var(--surface-color);
         }
 
+
         .skills-list li:hover i {
             color: var(--surface-color);
         }
+
 
         /* Smooth Scroll */
         html {
             scroll-behavior: smooth;
             scroll-padding-top: 80px;
         }
+
 
         /* --- Header & Navigation --- */
         .header {
@@ -202,6 +260,7 @@
              box-shadow: 0 2px 15px var(--shadow-color);
         }
 
+
         .navbar {
             display: flex;
             justify-content: space-between;
@@ -214,6 +273,7 @@
             position: relative; /* Needed for absolute positioning of mobile menu */
         }
 
+
         .nav-logo {
             display: flex;
             align-items: center;
@@ -222,7 +282,9 @@
             font-weight: 700;
             color: var(--primary-color);
             text-decoration: none;
+            outline: none; /* Remove black frame/focus outline */
         }
+
 
         .logo-img {
             height: 40px;
@@ -237,6 +299,7 @@
             gap: 2rem;
         }
 
+
         .nav-link {
             text-decoration: none;
             color: var(--text-secondary);
@@ -245,6 +308,7 @@
             position: relative;
             padding: 5px 0;
         }
+
 
         .nav-link::after {
             content: '';
@@ -257,9 +321,11 @@
             transition: width 0.3s ease;
         }
 
+
         .nav-link:hover, .nav-link.active {
             color: var(--primary-color);
         }
+
 
         .nav-link:hover::after, .nav-link.active::after {
             width: 100%;
@@ -284,12 +350,14 @@
         [data-theme="dark"] #theme-icon-light { display: inline-block; }
         [data-theme="dark"] #theme-icon-dark { display: none; }
 
+
         .nav-toggle {
             display: none;
             font-size: 1.5rem;
             cursor: pointer;
             color: var(--primary-color);
         }
+
 
         /* --- Home Section --- */
         #home {
@@ -318,9 +386,11 @@
             line-height: 1.2;
         }
 
+
         .home-content .name {
             color: var(--primary-color);
         }
+
 
         .home-content .title {
             font-size: clamp(1.2rem, 3vw, 1.5rem);
@@ -335,12 +405,14 @@
             font-size: 1.1rem;
         }
 
+
         .home-image-container {
             justify-self: center;
             position: relative;
             width: 280px; /* Default size for mobile */
             height: 280px;
         }
+
 
         .home-image-container::before {
             content: '';
@@ -350,14 +422,17 @@
             border-radius: 50%;
             background: linear-gradient(45deg, var(--secondary-color), var(--primary-color)) border-box;
             -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+            mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
             -webkit-mask-composite: xor;
             mask-composite: exclude;
             animation: rotate 4s linear infinite;
         }
 
+
         .home-image-container:hover::before {
             animation-play-state: paused;
         }
+
 
         .home-photo {
             width: 100%;
@@ -371,10 +446,12 @@
             transform: scale(1.03);
         }
 
+
         @keyframes rotate {
             from { transform: rotate(0deg); }
             to { transform: rotate(360deg); }
         }
+
 
         .cta-button {
             display: inline-block;
@@ -391,6 +468,7 @@
         [data-theme="dark"] .cta-button {
             color: var(--background-color-dark);
         }
+
 
         .cta-button:hover {
             transform: translateY(-3px);
@@ -441,6 +519,7 @@
             color: var(--primary-color);
         }
 
+
         /* --- Quality Checklist Styles --- */
         .quality-checklist {
             background-color: var(--surface-color);
@@ -451,11 +530,13 @@
             box-shadow: 0 4px 15px var(--shadow-color);
         }
 
+
         .quality-checklist h3 {
             margin-bottom: 1.5rem;
             text-align: center;
             color: var(--primary-color);
         }
+
 
         .checklist {
             list-style: none;
@@ -463,6 +544,7 @@
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 1rem;
         }
+
 
         .checklist li {
             display: flex;
@@ -473,19 +555,23 @@
             transition: transform 0.3s ease;
         }
 
+
         .checklist li:hover {
             transform: translateX(5px);
         }
+
 
         .checklist i {
             color: var(--primary-color);
             font-size: 1.2rem;
         }
 
+
         /* --- Services Section --- */
         #services {
             background-color: var(--surface-color);
         }
+
 
         .services-grid {
             display: grid;
@@ -502,10 +588,12 @@
             transition: transform 0.3s, box-shadow 0.3s;
         }
 
+
         .service-card:hover {
             transform: translateY(-10px);
             box-shadow: 0 10px 30px var(--shadow-color);
         }
+
 
         .service-card .icon {
             font-size: 2.5rem;
@@ -520,10 +608,12 @@
             box-shadow: 0 0 0 5px var(--background-color);
         }
 
+
         .service-card h3 {
             font-size: 1.3rem;
             margin-bottom: 0.5rem;
         }
+
 
 
         /* --- Projects Section --- */
@@ -532,6 +622,7 @@
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 2rem;
         }
+
 
         .project-card {
             background: var(--surface-color);
@@ -549,6 +640,7 @@
             box-shadow: 0 12px 25px rgba(0, 0, 0, 0.12);
         }
 
+
         .project-thumbnail {
             height: 220px;
             background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
@@ -559,6 +651,7 @@
             font-size: 3.5rem;
         }
 
+
         .project-content {
             padding: 1.5rem;
             flex-grow: 1;
@@ -566,15 +659,18 @@
             flex-direction: column;
         }
 
+
         .project-content h3 {
             font-size: 1.3rem;
             margin-bottom: 0.5rem;
         }
 
+
         .project-content p {
             margin-bottom: 1rem;
             flex-grow: 1;
         }
+
 
         .project-tags {
             list-style: none;
@@ -583,6 +679,7 @@
             gap: 0.5rem;
             margin-bottom: 1.5rem;
         }
+
 
         .project-tags li {
             background-color: var(--background-color);
@@ -603,9 +700,11 @@
             margin-top: auto;
         }
 
+
         .project-link:hover {
             color: var(--secondary-color);
         }
+
 
         .project-link i {
             margin-left: 8px;
@@ -631,9 +730,11 @@
             margin-top: 2rem;
         }
 
+
         .form-group {
             margin-bottom: 1.5rem;
         }
+
 
         .form-input {
             width: 100%;
@@ -647,11 +748,13 @@
             transition: border-color 0.3s, box-shadow 0.3s;
         }
 
+
         .form-input:focus {
             outline: none;
             border-color: var(--primary-color);
             box-shadow: 0 0 0 3px hsla(var(--hue), 85%, 55%, 0.2);
         }
+
 
         textarea.form-input {
             resize: vertical;
@@ -676,6 +779,7 @@
             color: hsl(var(--hue), 85%, 80%);
         }
 
+
         #form-message.error {
             background-color: hsl(0, 80%, 90%);
             color: hsl(0, 95%, 20%);
@@ -687,6 +791,7 @@
             color: hsl(0, 85%, 80%);
         }
 
+
         /* --- Footer --- */
         .footer {
             background-color: var(--surface-color);
@@ -695,6 +800,7 @@
             padding: 3rem 0;
             border-top: 1px solid var(--border-color);
         }
+
 
         .footer-content {
             font-size: 0.9rem;
@@ -739,6 +845,7 @@
             transform: translateY(-2px);
         }
 
+
         /* --- Copyright Notification --- */
         .notification-card {
             position: fixed;
@@ -754,9 +861,11 @@
             transition: bottom 0.5s cubic-bezier(0.25, 1, 0.5, 1);
         }
 
+
         .notification-card.show {
             bottom: 20px;
         }
+
 
         .notification-header {
             display: flex;
@@ -764,6 +873,7 @@
             align-items: center;
             margin-bottom: 1rem;
         }
+
 
         .notification-title {
             font-size: 1.1rem;
@@ -774,9 +884,11 @@
             gap: 0.5rem;
         }
 
+
         .notification-title i {
             color: var(--primary-color);
         }
+
 
         .notification-close {
             background: none;
@@ -786,6 +898,7 @@
             cursor: pointer;
             transition: transform 0.3s, color 0.3s;
         }
+
 
         .notification-close:hover {
             color: var(--primary-color);
@@ -818,6 +931,7 @@
             visibility: hidden;
         }
 
+
         .spinner {
             width: 50px;
             height: 50px;
@@ -832,6 +946,7 @@
                 transform: rotate(360deg);
             }
         }
+
 
 
         /* --- Responsive Design --- */
@@ -851,6 +966,7 @@
                 height: 500px;
             }
         }
+
 
         /* --- UPDATED BREAKPOINT FOR CONSISTENCY --- */
         @media (max-width: 991px) {
@@ -880,6 +996,7 @@
                 transition: transform 0.3s ease, opacity 0.3s ease, visibility 0s 0.3s;
             }
 
+
             .nav-menu.active {
                 opacity: 1;
                 visibility: visible;
@@ -887,9 +1004,11 @@
                 transition: transform 0.3s ease, opacity 0.3s ease;
             }
 
+
             .nav-menu .nav-item {
                 width: 100%;
             }
+
 
             .nav-menu .nav-link {
                 display: block;
@@ -897,6 +1016,7 @@
                 padding: 0.75rem 1rem;
                 border-radius: 8px;
             }
+
 
             .nav-menu .nav-link:hover {
                 background-color: var(--background-color);
@@ -907,15 +1027,18 @@
                  font-weight: 600;
             }
 
+
             .nav-menu .nav-link::after {
                 display: none; /* Hide underline on mobile */
             }
+
 
             .nav-menu .nav-item:last-child {
                 margin-top: 0.5rem;
                 padding-top: 0.5rem;
                 border-top: 1px solid var(--border-color);
             }
+
 
             .nav-menu .theme-switcher {
                 width: 100%;
@@ -924,11 +1047,13 @@
                 padding: 0.5rem 1rem;
             }
 
+
             .nav-toggle {
                 display: block;
                 z-index: 2; /* Make sure toggle is clickable */
             }
         }
+
 
         /* --- Enhanced Responsive Design --- */
         @media (max-width: 1024px) {
@@ -936,6 +1061,7 @@
             .home-container { gap: 3rem; }
             .services-grid { grid-template-columns: repeat(2, 1fr); }
         }
+
 
         @media (max-width: 768px) {
             section { padding: 4rem 0; }
@@ -959,6 +1085,7 @@
             }
         }
 
+
         @media (max-width: 480px) {
             .container { padding: 0 1.25rem; }
             .home-content h1 { font-size: 2.5rem; }
@@ -976,6 +1103,7 @@
             }
         }
 
+
         @media (max-width: 480px) {
             .notification-card {
                 max-width: calc(100% - 30px);
@@ -987,17 +1115,164 @@
             }
         }
 
+
+        /* --- Senior UI/UX Enhancements --- */
+        /* Ripple effect for buttons */
+        .cta-button, .submit-btn, .copyright-button {
+            position: relative;
+            overflow: hidden;
+        }
+        .cta-button:active::after, .submit-btn:active::after, .copyright-button:active::after {
+            content: '';
+            position: absolute;
+            left: 50%; top: 50%;
+            width: 0; height: 0;
+            background: rgba(0, 172, 193, 0.2);
+            border-radius: 100%;
+            transform: translate(-50%, -50%);
+            animation: ripple 0.5s linear;
+            z-index: 1;
+        }
+        @keyframes ripple {
+            to {
+                width: 200px;
+                height: 200px;
+                opacity: 0;
+            }
+        }
+        /* Icon hover animation */
+        .footer-socials a i, .service-card .icon, .project-card .fa {
+            transition: transform 0.3s, color 0.3s;
+        }
+        .footer-socials a:hover i, .service-card:hover .icon, .project-card:hover .fa {
+            transform: scale(1.15) rotate(-6deg);
+            color: var(--primary-color);
+        }
+        /* Glassmorphism for cards/modals */
+        .service-card, .project-card, .notification-card {
+            background: rgba(255,255,255,0.7);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            box-shadow: 0 8px 32px 0 rgba(31,38,135,0.10);
+        }
+        [data-theme="dark"] .service-card, [data-theme="dark"] .project-card, [data-theme="dark"] .notification-card {
+            background: rgba(17,34,64,0.7);
+        }
+        /* Modern gradient for buttons */
+        .cta-button, .submit-btn {
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+            border: none;
+        }
+        .cta-button:focus, .submit-btn:focus {
+            outline: 2px solid var(--secondary-color);
+            outline-offset: 2px;
+        }
+        /* Animated progress bar */
+        .scroll-progress {
+            transition: width 0.4s cubic-bezier(0.4,0,0.2,1), background 0.5s;
+            will-change: width;
+        }
+        /* Section reveal: more nuanced stagger */
+        .fade-in, .animate-stagger {
+            opacity: 0;
+            transform: translateY(40px) scale(0.98);
+            transition: opacity 0.9s cubic-bezier(0.4,0,0.2,1), transform 0.9s cubic-bezier(0.4,0,0.2,1);
+        }
+        .fade-in.visible, .animate-stagger.visible {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+        /* Input focus effect */
+        .form-input:focus {
+            border-color: var(--primary-color) !important;
+            box-shadow: 0 0 0 3px hsla(var(--hue), 85%, 55%, 0.15);
+            transition: box-shadow 0.3s, border-color 0.3s;
+        }
+        /* Responsive, fluid spacing */
+        .container {
+            padding-left: clamp(1rem, 4vw, 2.5rem);
+            padding-right: clamp(1rem, 4vw, 2.5rem);
+        }
+        section {
+            padding: clamp(3rem, 8vw, 6rem) 0;
+        }
+        /* Adaptive typography */
+        html {
+            font-size: clamp(15px, 2vw, 18px);
+        }
+        h1, h2, h3, h4 {
+            letter-spacing: 0.01em;
+        }
+        /* Scroll-to-top button */
+        #scrollToTopBtn {
+            position: fixed;
+            right: 2rem;
+            bottom: 2rem;
+            z-index: 1200;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+            color: #fff;
+            border: none;
+            border-radius: 50%;
+            width: 48px;
+            height: 48px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.4s, transform 0.4s;
+        }
+        #scrollToTopBtn.show {
+            opacity: 1;
+            pointer-events: auto;
+            transform: translateY(0);
+        }
+        #scrollToTopBtn:focus {
+            outline: 2px solid var(--secondary-color);
+        }
+        /* Theme switcher animation */
+        .theme-switcher {
+            transition: background 0.3s, color 0.3s, transform 0.3s;
+        }
+        .theme-switcher:active {
+            transform: scale(1.2) rotate(20deg);
+            background: var(--primary-color);
+            color: #fff;
+        }
+        /* Touch-friendly targets */
+        .nav-link, .cta-button, .submit-btn, .footer-socials a, .theme-switcher {
+            min-height: 44px;
+            min-width: 44px;
+        }
+        /* Min-heights for cards to reduce layout shift */
+        .service-card, .project-card {
+            min-height: 320px;
+        }
+        /* Lazy loading for images - handled via HTML loading="lazy" attribute */
+
+        #form-message:empty {
+            display: none !important;
+            padding: 0 !important;
+            margin: 0 !important;
+            border: none !important;
+            min-height: 0 !important;
+        }
     </style>
 </head>
 <body>
+
 
     <!-- Preloader -->
     <div id="preloader">
         <div class="spinner"></div>
     </div>
 
+
     <!-- Scroll Progress Indicator -->
     <div class="scroll-progress" id="scroll-progress"></div>
+
 
     <!-- Header -->
     <header class="header">
@@ -1015,14 +1290,17 @@
                     transition: width 0.2s ease;
                 }
 
+
                 /* Enhanced Navigation */
                 .header {
                     transition: transform 0.3s ease, background-color 0.3s ease;
                 }
 
+
                 .header.hidden {
                     transform: translateY(-100%);
                 }
+
 
                 .nav-link::before {
                     content: '';
@@ -1037,16 +1315,20 @@
                     transform-origin: right;
                 }
 
+
                 .nav-link:hover::before,
                 .nav-link.active::before {
                     transform: scaleX(1);
                     transform-origin: left;
                 }
 
+
                 .nav-logo {
                     position: relative;
                     overflow: hidden;
+                    outline: none; /* Remove black frame/focus outline */
                 }
+
 
                 .nav-logo::after {
                     content: '';
@@ -1059,11 +1341,12 @@
                     transition: 0.5s;
                 }
 
+
                 .nav-logo:hover::after {
                     left: 100%;
                 }
             </style>
-            <a href="#home" class="nav-logo">
+            <a href="#" class="nav-logo" id="brand-logo">
                 <img src="assets/logo.png" alt="EOPeak Logo" class="logo-img">
                 <span>EOPeak</span>
             </a>
@@ -1086,6 +1369,7 @@
         </nav>
     </header>
 
+
     <main>
         <!-- Home Section -->
         <section id="home">
@@ -1093,19 +1377,20 @@
                 <div class="home-container fade-in">
                     <div class="home-content">
                         <h3>Hello, I'm</h3>
-                        <h1 class="name">Eslam Osama Saad</h1>
-                        <p class="title">Academic Web Converter / Educational Technologist</p>
+                        <h1 class="name">Eslam Osama</h1>
+                        <p class="title">Information & Learning Experience Designer</p>
                         <p class="intro-text">
-                            I specialize in transforming traditional academic materials (PDFs, Word documents, slides, and spreadsheets) into fast, responsive, interactive, and downloadable web-based learning environments. More than just web development, I create modern digital platforms that enhance education, making academic content more accessible, engaging, and effective.
+                            I specialize in transforming complex information—from academic materials and dense corporate reports—into intuitive, interactive web experiences. I create modern digital platforms that make content more accessible, engaging, and effective for any audience.
                         </p>
                         <a href="#contact" class="cta-button">Get In Touch</a>
                     </div>
                     <div class="home-image-container">
-                        <img src="assets/my_photo.jpg" alt="Eslam Osama Saad" class="home-photo">
+                        <img src="assets/my_photo.jpg" alt="Eslam Osama Saad" class="home-photo" loading="lazy">
                     </div>
                 </div>
             </div>
         </section>
+
 
         <!-- About Me Section -->
         <section id="about">
@@ -1116,24 +1401,27 @@
                 </div>
                 <div class="about-grid">
                     <div class="about-content">
-                        <p>
-                            I convert educational materials (PDFs, Word, PPT, Lab Sheets, Excel) into clean, responsive, downloadable websites — no backend required, hosted instantly. As a bridge between traditional academia and modern tech, I serve university professors, teaching assistants, online course creators, academic institutions, and students.
-                        </p>
+                        <div class="about-content">
+                            <p>
+                               As a bridge between traditional documents and modern technology, my core focus is converting static, complex information—from academic materials to corporate reports—into clean, responsive, and interactive digital experiences. The result is instantly-hosted content that is accessible and effective for any audience.
+                            </p>
 
-                        <h3>My Core Skills</h3>
-                        <ul class="skills-list">
-                            <li><i class="fab fa-html5"></i> HTML5</li>
-                            <li><i class="fab fa-css3-alt"></i> CSS3</li>
-                            <li><i class="fab fa-js-square"></i> JavaScript</li>
-                            <li><i class="fas fa-mobile-alt"></i> Responsive Design</li>
-                            <li><i class="fas fa-chalkboard-teacher"></i> Educational Content</li>
-                            <li><i class="fas fa-sitemap"></i> Web Architecture</li>
-                            <li><i class="fas fa-universal-access"></i> Accessibility</li>
-                        </ul>
-                    </div>
+
+                            <h3>My Core Skills</h3>
+                            <ul class="skills-list">
+                                <li><i class="fab fa-html5"></i> HTML5</li>
+                                <li><i class="fab fa-css3-alt"></i> CSS3</li>
+                                <li><i class="fab fa-js-square"></i> JavaScript</li>
+                                <li><i class="fas fa-mobile-alt"></i> Responsive Design</li>
+                                <li><i class="fas fa-sitemap"></i> Information Architecture</li>
+                                <li><i class="fas fa-lightbulb"></i> UI/UX Design</li>
+                                <li><i class="fas fa-universal-access"></i> Accessibility</li>
+                            </ul>
+                        </div>
                 </div>
             </div>
         </section>
+
 
         <!-- Services Section -->
         <section id="services">
@@ -1151,15 +1439,18 @@
                             cursor: pointer;
                         }
 
+
                         .service-card:hover, .project-card:hover {
                             transform: translateY(-5px);
                             box-shadow: 0 10px 20px rgba(0,0,0,0.1);
                         }
 
+
                         .service-card.visible, .project-card.visible {
                             opacity: 1;
                             transform: translateY(0);
                         }
+
 
                         .animate-stagger {
                             opacity: 0;
@@ -1167,14 +1458,17 @@
                             transition: opacity 0.4s ease-out, transform 0.4s ease-out;
                         }
 
+
                         .animate-stagger.visible {
                             opacity: 1;
                             transform: translateY(0);
                         }
 
+
                         .service-card i, .project-card i {
                             transition: transform 0.3s ease;
                         }
+
 
                         .service-card:hover i, .project-card:hover i {
                             transform: scale(1.1) rotate(5deg);
@@ -1190,6 +1484,15 @@
                         <h3>Academic Web Solutions</h3>
                         <p>Specialized in creating digital learning environments that maintain academic rigor while providing modern user experience.</p>
                     </div>
+
+
+                    <div class="service-card animate-stagger">
+                        <i class="icon fas fa-chart-bar"></i>
+                        <h3>Interactive Report & Data Visualization</h3>
+                        <p>Turn dense business reports, analytics, and data into engaging, explorable webpages that reveal key insights.</p>
+                    </div>
+
+
                     <div class="service-card animate-stagger">
                         <i class="icon fas fa-download"></i>
                         <h3>Multi-Format Delivery</h3>
@@ -1200,9 +1503,25 @@
                         <h3>Quality Assurance</h3>
                         <p>Mobile-friendly<br>Loads fast<br>Accessible (semantic HTML)<br>Fully downloadable<br>Form submits without backend<br>Modular & expandable</p>
                     </div>
+                    <div class="service-card animate-stagger">
+                        <i class="icon fas fa-users-cog"></i>
+                        <h3>Educational Impact</h3>
+                        <p>Transform complex educational content into engaging learning experiences that improve comprehension and retention rates for students and professionals.</p>
+                    </div>
+                    <div class="service-card animate-stagger">
+                        <i class="icon fas fa-chalkboard-teacher"></i>
+                        <h3>Professional Presentation</h3>
+                        <p>Create polished, professional digital presentations that elevate your brand and communicate your message effectively to any audience.</p>
+                    </div>
+                    <div class="service-card animate-stagger">
+                        <i class="icon fas fa-puzzle-piece"></i>
+                        <h3>Complete Solution Scope</h3>
+                        <p>End-to-end project management from initial concept to final deployment, ensuring every aspect of your digital transformation is handled professionally.</p>
+                    </div>
                 </div>
             </div>
         </section>
+
 
         <!-- Projects Section -->
         <section id="projects">
@@ -1214,48 +1533,34 @@
                 <div class="projects-grid">
                     <!-- Project 1 -->
                     <div class="project-card animate-stagger">
-                         <div class="project-thumbnail"><i class="fas fa-shield-alt"></i></div>
+                        <div class="project-thumbnail"><i class="fas fa-lock"></i></div>
                         <div class="project-content">
-                            <h3>Firewalls & IDS Learning Page</h3>
-                            <p>An interactive educational webpage explaining the concepts of Firewalls and Intrusion Detection Systems in network security.</p>
+                            <h3>ECE4304 Data Security</h3>
+                            <p>An interactive journey into the core principles of data security. Select a module below to begin your exploration of key concepts, from foundational theory to practical defense mechanisms.</p>
                              <ul class="project-tags">
                                 <li>HTML</li>
-                                <li>CSS</li>
+                                <li>JS</li>
                                 <li>Security</li>
+                                <li>Education</li>
                             </ul>
-                            <a href="https://firewalls-ids-web.vercel.app/" target="_blank" class="project-link">
+                            <a href="https://data-security-interactive-hub.vercel.app/" target="_blank" class="project-link">
                                 Visit Project <i class="fas fa-arrow-right"></i>
                             </a>
                         </div>
                     </div>
                     <!-- Project 2 -->
                     <div class="project-card animate-stagger">
-                        <div class="project-thumbnail"><i class="fas fa-signature"></i></div>
+                        <div class="project-thumbnail"><i class="fas fa-microchip"></i></div>
                         <div class="project-content">
-                            <h3>Digital Signatures & Data Security</h3>
-                            <p>A learning module designed to demystify digital signatures and their crucial role in ensuring data integrity and security.</p>
+                            <h3>CS121 Interactive Lab Manual</h3>
+                            <p>A modern learning ecosystem revolutionizing digital logic education through interactive K-Maps, circuit simulators, and progressive web application technology.</p>
                              <ul class="project-tags">
                                 <li>HTML</li>
                                 <li>JS</li>
-                                <li>Cryptography</li>
+                                <li>PWA</li>
+                                <li>Education</li>
                             </ul>
-                            <a href="https://data-security-digital-signatures.vercel.app/" target="_blank" class="project-link">
-                                Visit Project <i class="fas fa-arrow-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                    <!-- Project 3 -->
-                    <div class="project-card animate-stagger">
-                        <div class="project-thumbnail"><i class="fas fa-cubes"></i></div>
-                        <div class="project-content">
-                            <h3>Block Cipher Learning Module</h3>
-                            <p>A detailed guide exploring different modes of operation for block ciphers, an essential topic in modern cryptography.</p>
-                             <ul class="project-tags">
-                                <li>HTML</li>
-                                <li>CSS</li>
-                                <li>JS</li>
-                            </ul>
-                            <a href="https://block-cipher-learning-module.vercel.app/" target="_blank" class="project-link">
+                            <a href="https://cs-121-interactive-lab-manual.vercel.app/" target="_blank" class="project-link">
                                 Visit Project <i class="fas fa-arrow-right"></i>
                             </a>
                         </div>
@@ -1263,6 +1568,7 @@
                 </div>
             </div>
         </section>
+
 
         <!-- Contact Section -->
         <section id="contact">
@@ -1272,103 +1578,98 @@
                     <h2>Contact Me</h2>
                 </div>
                 <p>
-                    Have a project in mind or want to connect? I'm always open to discussing new ideas and opportunities. Fill out the form below or email me directly at <a href="mailto:eo54872@gmail.com" class="project-link">eo54872@gmail.com</a>.
+                    Have a project in mind or want to connect? I'm always open to discussing new ideas and opportunities. Fill out the form below or email me directly at <a href="https://mail.google.com/mail/?view=cm&to=eo6014501@gmail.com" target="_blank" class="project-link">eo6014501@gmail.com</a>.
                 </p>
                 <style>
-                    .contact-form .form-input {
-                        transition: all 0.3s ease;
-                        border: 2px solid transparent;
-                        background: var(--input-background);
+                    /* Advanced error and help message styling for contact form */
+                    .form-error {
+                      color: #c0392b;
+                      background: linear-gradient(90deg, #fff0f0 60%, #ffe5e5 100%);
+                      border-radius: 0.75rem;
+                      font-size: 1.05em;
+                      margin-top: 0.25rem;
+                      margin-bottom: 0.5rem;
+                      padding: 0.5rem 1rem;
+                      text-align: left;
+                      font-family: inherit;
+                      box-shadow: 0 2px 8px 0 rgba(192,57,43,0.07);
+                      border: 1px solid #f8d7da;
+                      display: none;
+                      font-weight: 600;
+                      letter-spacing: 0.01em;
+                      transition: opacity 0.3s, transform 0.3s;
+                      opacity: 0;
+                      transform: translateY(8px);
                     }
-
-                    .contact-form .form-input:focus {
-                        border-color: var(--primary-color);
-                        transform: translateY(-2px);
-                        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+                    .form-error.active {
+                      display: block;
+                      opacity: 1;
+                      transform: translateY(0);
                     }
-
-                    .submit-btn {
-                        position: relative;
-                        overflow: hidden;
-                        transition: all 0.3s ease;
+                    .form-help {
+                      color: #888;
+                      background: none;
+                      font-size: 0.98em;
+                      margin-top: 0.15rem;
+                      margin-bottom: 0.25rem;
+                      padding: 0 0.5rem;
+                      text-align: left;
+                      font-family: inherit;
+                      display: block;
+                      transition: color 0.2s;
                     }
-
-                    .submit-btn:hover {
-                        transform: translateY(-2px);
-                        box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+                    input:invalid, textarea:invalid {
+                      border-color: initial !important;
+                      box-shadow: none !important;
                     }
-
-                    .submit-btn::after {
-                        content: '';
-                        position: absolute;
-                        top: 0;
-                        left: -100%;
-                        width: 100%;
-                        height: 100%;
-                        background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-                        transition: 0.5s;
+                    input:focus:invalid, textarea:focus:invalid {
+                      border-color: initial !important;
+                      box-shadow: none !important;
                     }
-
-                    .submit-btn:hover::after {
-                        left: 100%;
+                    #submit-button:disabled,
+                    #submit-button.disabled {
+                      pointer-events: none;
+                      opacity: 0.6;
+                      filter: grayscale(0.2);
+                      box-shadow: none !important;
+                      transform: none !important;
+                      background: linear-gradient(90deg, #bbb 60%, #eee 100%) !important;
+                      color: #fff !important;
+                      cursor: not-allowed !important;
                     }
-
-                    #form-message {
-                        opacity: 0;
-                        transform: translateY(10px);
-                        transition: all 0.3s ease;
-                    }
-
-                    #form-message.show {
-                        opacity: 1;
-                        transform: translateY(0);
-                    }
-
-                    .success {
-                        color: #28a745;
-                        background: rgba(40, 167, 69, 0.1);
-                        border: 1px solid #28a745;
-                        padding: 10px;
-                        border-radius: 5px;
-                        margin-top: 10px;
-                    }
-
-                    .error {
-                        color: #dc3545;
-                        background: rgba(220, 53, 69, 0.1);
-                        border: 1px solid #dc3545;
-                        padding: 10px;
-                        border-radius: 5px;
-                        margin-top: 10px;
+                    #submit-button:disabled:hover,
+                    #submit-button.disabled:hover {
+                      box-shadow: none !important;
+                      transform: none !important;
                     }
                 </style>
-                <form id="contact-form" class="contact-form animate-stagger">
+                <form id="contact-form" class="contact-form animate-stagger" novalidate>
                     <input type="hidden" name="access_key" value="156f7ac9-5df6-4f52-8d54-40e0cbc9a672">
-
-                    <!-- Form Inputs -->
-                    <div class="form-group">
-                        <input type="text" id="name" name="name" class="form-input" placeholder="Your Name" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="email" id="email" name="email" class="form-input" placeholder="Your Email" required>
-                    </div>
-                    <div class="form-group">
-                        <textarea id="message" name="message" class="form-input" placeholder="Your Message" required></textarea>
-                    </div>
-                    
-                    <!-- Honeypot for spam prevention -->
-                    <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
-
-                    <!-- Custom Subject & From Name -->
                     <input type="hidden" name="subject" value="New Contact Form Submission from Your Portfolio">
                     <input type="hidden" name="from_name" value="Portfolio Visitor">
-
-                    <button type="submit" id="submit-button" class="cta-button submit-btn">Send Message</button>
+                    <div class="form-group">
+                        <input type="text" id="name" name="name" class="form-input" placeholder="Your Name" required minlength="2" maxlength="50" autocomplete="name" aria-describedby="help-name error-name">
+                        <div class="form-help" id="help-name">Enter your real name (letters and spaces only, 2-50 characters).</div>
+                        <div class="form-error" id="error-name" role="alert" aria-live="polite"></div>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" name="email" class="form-input" placeholder="Your Email" required maxlength="100" autocomplete="email" aria-describedby="help-email error-email">
+                        <div class="form-help" id="help-email">We'll only use your email to reply. It won't be shared.</div>
+                        <div class="form-error" id="error-email" role="alert" aria-live="polite"></div>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" name="message" class="form-input" placeholder="Your Message" required minlength="10" maxlength="1000" aria-describedby="help-message error-message"></textarea>
+                        <div class="form-help" id="help-message">Write your message clearly (at least 10 characters).</div>
+                        <div class="form-error" id="error-message" role="alert" aria-live="polite"></div>
+                    </div>
+                    <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+                    <button type="submit" id="submit-button" class="cta-button submit-btn" disabled>Send Message</button>
                     <p id="form-message"></p>
                 </form>
             </div>
         </section>
     </main>
+
 
     <!-- Footer -->
     <style>
@@ -1376,6 +1677,7 @@
             position: relative;
             overflow: hidden;
         }
+
 
         .footer::before {
             content: '';
@@ -1388,12 +1690,14 @@
             opacity: 0.2;
         }
 
+
         .footer-socials {
             display: flex;
             gap: 1.5rem;
             justify-content: center;
             margin-bottom: 1.5rem;
         }
+
 
         .footer-socials a {
             position: relative;
@@ -1409,11 +1713,13 @@
             transform-origin: center;
         }
 
+
         .footer-socials a:hover {
             transform: translateY(-3px) scale(1.1);
             color: var(--primary-color);
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
+
 
         .footer-socials a::before {
             content: '';
@@ -1427,9 +1733,11 @@
             transition: transform 0.3s ease;
         }
 
+
         .footer-socials a:hover::before {
             transform: scale(1);
         }
+
 
         .copyright-button {
             padding: 0.5rem 1rem;
@@ -1443,10 +1751,12 @@
             overflow: hidden;
         }
 
+
         .copyright-button:hover {
             transform: translateY(-2px);
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
+
 
         .copyright-button::after {
             content: '';
@@ -1458,6 +1768,7 @@
             background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
             transition: 0.5s;
         }
+
 
         .copyright-button:hover::after {
             left: 100%;
@@ -1486,6 +1797,34 @@
         </p>
     </div>
 
+
+    <!-- Scroll-to-Top Button -->
+    <button id="scrollToTopBtn" aria-label="Scroll to top" tabindex="0" style="display:none;"><i class="fas fa-arrow-up"></i></button>
+
+    <!-- Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Eslam Osama Saad",
+        "jobTitle": "Educational Technologist & Academic Web Converter",
+        "description": "Professional Academic Web Converter specializing in transforming complex educational content into interactive, modern web experiences.",
+        "url": "https://eopeak.vercel.app/",
+        "sameAs": [
+            "https://github.com",
+            "https://linkedin.com",
+            "https://twitter.com"
+        ],
+        "knowsAbout": [
+            "Web Development",
+            "Educational Technology",
+            "Academic Content Conversion",
+            "Interactive Learning",
+            "Digital Education"
+        ]
+    }
+    </script>
+
     <script>
         // --- PRELOADER SCRIPT ---
         window.addEventListener('load', () => {
@@ -1500,9 +1839,11 @@
             }
         });
 
+
         document.addEventListener('DOMContentLoaded', function() {
             const doc = document.documentElement;
             const themeSwitcher = document.getElementById('theme-switcher');
+            const brandLogo = document.getElementById('brand-logo');
             const navToggle = document.getElementById('nav-toggle');
             const navMenu = document.querySelector('.nav-menu');
             const navLinks = document.querySelectorAll('.nav-link');
@@ -1514,15 +1855,24 @@
             const notificationCard = document.getElementById('notification-card');
             const notificationCloseBtn = document.getElementById('notification-close');
 
+
             // --- THEME SWITCHER ---
             const currentTheme = localStorage.getItem('theme') || 'light';
             doc.setAttribute('data-theme', currentTheme);
+
 
             themeSwitcher.addEventListener('click', () => {
                 const newTheme = doc.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
                 doc.setAttribute('data-theme', newTheme);
                 localStorage.setItem('theme', newTheme);
             });
+
+            // --- BRAND LOGO CLICK HANDLER ---
+            brandLogo.addEventListener('click', (e) => {
+                e.preventDefault();
+                window.location.reload();
+            });
+
 
             // --- MOBILE NAVIGATION ---
             const icon = navToggle.querySelector('i');
@@ -1537,6 +1887,7 @@
                 }
             });
 
+
             navLinks.forEach(link => {
                 link.addEventListener('click', () => {
                     if (navMenu.classList.contains('active')) {
@@ -1547,10 +1898,12 @@
                 });
             });
 
+
             // --- SCROLL PROGRESS AND ENHANCED NAVIGATION ---
             const scrollProgress = document.getElementById('scroll-progress');
             let lastScrollTop = 0;
             const header = document.querySelector('.header');
+
 
             window.addEventListener('scroll', () => {
                 // Update progress bar
@@ -1558,6 +1911,7 @@
                 const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
                 const scrolled = (winScroll / height) * 100;
                 scrollProgress.style.width = scrolled + '%';
+
 
                 // Hide/show header on scroll
                 const currentScroll = window.pageYOffset;
@@ -1568,6 +1922,7 @@
                 }
                 lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
 
+
                 // Active nav link on scroll
                 let currentSection = '';
                 sections.forEach(section => {
@@ -1577,6 +1932,7 @@
                     }
                 });
 
+
                 navLinks.forEach(link => {
                     link.classList.remove('active');
                     if (link.getAttribute('href').includes(currentSection)) {
@@ -1584,6 +1940,7 @@
                     }
                 });
             });
+
 
             // --- ENHANCED ANIMATIONS AND TRANSITIONS ---
             const observer = new IntersectionObserver((entries) => {
@@ -1605,6 +1962,7 @@
                 threshold: 0.1,
                 rootMargin: '0px 0px -50px 0px'
             });
+
 
             // Add smooth scroll behavior
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -1628,22 +1986,28 @@
             });
             
             // --- FUNCTIONAL CONTACT FORM WITH WEB3FORMS ---
+            let submissionSuccess = false;
             contactForm.addEventListener('submit', async function(e) {
                 e.preventDefault();
+                submitButton.disabled = true; // Immediately disable the button after submit
+
 
                 const formData = new FormData(contactForm);
                 const object = {};
                 formData.forEach((value, key) => { object[key] = value; });
                 const json = JSON.stringify(object);
 
+
                 submitButton.innerHTML = "Sending...";
                 submitButton.disabled = true;
                 formMessage.classList.remove('success', 'error', 'show');
+
 
                 // Disable all form inputs during submission
                 Array.from(contactForm.elements).forEach(input => {
                     if (input.type !== 'hidden') input.disabled = true;
                 });
+
 
                 try {
                     submitButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
@@ -1660,7 +2024,6 @@
                         formMessage.innerHTML = '<i class="fas fa-check-circle"></i> Thank you! Your message has been sent successfully.';
                         formMessage.classList.add('success', 'show');
                         contactForm.reset();
-                        
                         // Add success animation to button
                         submitButton.innerHTML = '<i class="fas fa-check"></i> Sent!';
                         submitButton.style.backgroundColor = '#28a745';
@@ -1668,41 +2031,57 @@
                             submitButton.innerHTML = 'Send Message';
                             submitButton.style.backgroundColor = '';
                         }, 3000);
+                        // Disable submit button after successful submission and keep it disabled until valid input
+                        submitButton.disabled = true;
+                        // Hide all helper messages after reset
+                        if (typeof helpName !== 'undefined') helpName.style.display = 'none';
+                        if (typeof helpEmail !== 'undefined') helpEmail.style.display = 'none';
+                        if (typeof helpMessage !== 'undefined') helpMessage.style.display = 'none';
+                        submissionSuccess = true;
+                        justSubmitted = true;
                     } else {
                         console.error('Submission error:', result);
                         formMessage.innerHTML = `<i class="fas fa-exclamation-circle"></i> Error: ${result.message}`;
                         formMessage.classList.add('error', 'show');
+                        submissionSuccess = false;
                     }
                 } catch (error) {
                     console.error('Fetch error:', error);
                     formMessage.innerHTML = '<i class="fas fa-exclamation-triangle"></i> An error occurred. Please try again later.';
                     formMessage.classList.add('error', 'show');
+                    submissionSuccess = false;
                 } finally {
                     // Re-enable form inputs
                     Array.from(contactForm.elements).forEach(input => {
                         if (input.type !== 'hidden') input.disabled = false;
                     });
                     
-                    if (!formMessage.classList.contains('success')) {
+                    // Only re-enable the button if the submission was NOT successful
+                    if (!submissionSuccess) {
                         submitButton.innerHTML = 'Send Message';
                         submitButton.disabled = false;
                     }
 
+
                     // Auto-hide message after delay
                     setTimeout(() => {
                         formMessage.classList.remove('show');
+                        formMessage.innerHTML = '';
                     }, 5000);
                 }
             });
 
+
             // --- COPYRIGHT NOTIFICATION LOGIC ---
             let notificationTimer;
+
 
             const showNotification = () => {
                 clearTimeout(notificationTimer);
                 notificationCard.classList.add('show');
                 notificationTimer = setTimeout(hideNotification, 10000); // Auto-hide after 10 seconds
             };
+
 
             const hideNotification = () => {
                 notificationCard.classList.remove('show');
@@ -1715,6 +2094,7 @@
                 hideNotification();
             });
 
+
             // Show on first visit
             if (!localStorage.getItem('hasSeenCopyrightNotice')) {
                 setTimeout(() => {
@@ -1723,7 +2103,235 @@
                 }, 2500); // Show after 2.5 seconds
             }
         });
+
+        // --- ADVANCED CONTACT FORM VALIDATION ---
+        (function() {
+            const contactForm = document.getElementById('contact-form');
+            if (!contactForm) return;
+            const nameInput = document.getElementById('name');
+            const emailInput = document.getElementById('email');
+            const messageInput = document.getElementById('message');
+            const submitButton = document.getElementById('submit-button');
+            const errorName = document.getElementById('error-name');
+            const errorEmail = document.getElementById('error-email');
+            const errorMessage = document.getElementById('error-message');
+            const helpName = document.getElementById('help-name');
+            const helpEmail = document.getElementById('help-email');
+            const helpMessage = document.getElementById('help-message');
+            let justSubmitted = false;
+
+            // Helper validation functions
+            function validateName(showError = false) {
+                const value = nameInput.value.trim();
+                if (!value) {
+                    errorName.textContent = '';
+                    errorName.classList.remove('active');
+                    helpName.style.display = 'block';
+                    return false;
+                }
+                if (value.length < 2) {
+                    if (showError) showFieldError(errorName, helpName, 'Name must be at least 2 characters.');
+                    return false;
+                }
+                if (value.length > 50) {
+                    if (showError) showFieldError(errorName, helpName, 'Name is too long. Max 50 characters.');
+                    return false;
+                }
+                if (/[^a-zA-Z\s]/.test(value)) {
+                    if (showError) showFieldError(errorName, helpName, 'Name must only contain letters and spaces.');
+                    return false;
+                }
+                errorName.textContent = '';
+                errorName.classList.remove('active');
+                helpName.style.display = 'block';
+                return true;
+            }
+            function validateEmail(showError = false) {
+                const value = emailInput.value.trim();
+                if (!value) {
+                    errorEmail.textContent = '';
+                    errorEmail.classList.remove('active');
+                    helpEmail.style.display = 'block';
+                    return false;
+                }
+                if (!/^\S+@\S+\.\S+$/.test(value)) {
+                    if (showError) showFieldError(errorEmail, helpEmail, 'Please enter a valid email address.');
+                    return false;
+                }
+                if (value.length > 100) {
+                    if (showError) showFieldError(errorEmail, helpEmail, 'Email is too long. Max 100 characters.');
+                    return false;
+                }
+                errorEmail.textContent = '';
+                errorEmail.classList.remove('active');
+                helpEmail.style.display = 'block';
+                return true;
+            }
+            function validateMessage(showError = false) {
+                const value = messageInput.value.trim();
+                if (!value) {
+                    errorMessage.textContent = '';
+                    errorMessage.classList.remove('active');
+                    helpMessage.style.display = 'block';
+                    return false;
+                }
+                if (value.length < 10) {
+                    if (showError) showFieldError(errorMessage, helpMessage, 'Message must be at least 10 characters.');
+                    return false;
+                }
+                if (value.length > 1000) {
+                    if (showError) showFieldError(errorMessage, helpMessage, 'Message is too long. Max 1000 characters.');
+                    return false;
+                }
+                errorMessage.textContent = '';
+                errorMessage.classList.remove('active');
+                helpMessage.style.display = 'block';
+                return true;
+            }
+            function showFieldError(errorEl, helpEl, msg) {
+                errorEl.textContent = msg;
+                errorEl.classList.add('active');
+                helpEl.style.display = 'none';
+            }
+            function hideFieldError(errorEl, helpEl) {
+                errorEl.textContent = '';
+                errorEl.classList.remove('active');
+                helpEl.style.display = 'block';
+            }
+            function updateSubmitState() {
+                if (justSubmitted) {
+                    submitButton.disabled = true;
+                    submitButton.classList.add('opacity-60', 'cursor-not-allowed', 'disabled');
+                    return;
+                }
+                const validName = validateName(false);
+                const validEmail = validateEmail(false);
+                const validMessage = validateMessage(false);
+                const allFilled = nameInput.value.trim() && emailInput.value.trim() && messageInput.value.trim();
+                if (validName && validEmail && validMessage && allFilled) {
+                    submitButton.disabled = false;
+                    submitButton.classList.remove('opacity-60', 'cursor-not-allowed', 'disabled');
+                } else {
+                    submitButton.disabled = true;
+                    submitButton.classList.add('opacity-60', 'cursor-not-allowed', 'disabled');
+                }
+            }
+            // Real-time validation
+            nameInput.addEventListener('input', function() {
+                justSubmitted = false;
+                validateName(false);
+                updateSubmitState();
+            });
+            emailInput.addEventListener('input', function() {
+                justSubmitted = false;
+                validateEmail(false);
+                updateSubmitState();
+            });
+            messageInput.addEventListener('input', function() {
+                justSubmitted = false;
+                validateMessage(false);
+                updateSubmitState();
+            });
+            // On blur, show error if invalid
+            nameInput.addEventListener('blur', function() {
+                if (!validateName(true)) {
+                    helpName.style.display = 'none';
+                } else {
+                    hideFieldError(errorName, helpName);
+                }
+                updateSubmitState();
+            });
+            emailInput.addEventListener('blur', function() {
+                if (!validateEmail(true)) {
+                    helpEmail.style.display = 'none';
+                } else {
+                    hideFieldError(errorEmail, helpEmail);
+                }
+                updateSubmitState();
+            });
+            messageInput.addEventListener('blur', function() {
+                if (!validateMessage(true)) {
+                    helpMessage.style.display = 'none';
+                } else {
+                    hideFieldError(errorMessage, helpMessage);
+                }
+                updateSubmitState();
+            });
+            // On form submit, block if not valid
+            contactForm.addEventListener('submit', function(e) {
+                const validName = validateName(true);
+                const validEmail = validateEmail(true);
+                const validMessage = validateMessage(true);
+                if (!(validName && validEmail && validMessage)) {
+                    e.preventDefault();
+                    updateSubmitState();
+                    return false;
+                }
+                submitButton.disabled = true;
+                submitButton.classList.add('opacity-60', 'cursor-not-allowed', 'disabled');
+                justSubmitted = true;
+                // ... continue with your async send logic ...
+            });
+            // Initial state
+            updateSubmitState();
+        })();
+
+        // --- SCROLL-TO-TOP BUTTON ---
+        (function() {
+            const scrollBtn = document.getElementById('scrollToTopBtn');
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 300) {
+                    scrollBtn.classList.add('show');
+                    scrollBtn.style.display = 'flex';
+                } else {
+                    scrollBtn.classList.remove('show');
+                    scrollBtn.style.display = 'none';
+                }
+            });
+            scrollBtn.addEventListener('click', function() {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+            scrollBtn.addEventListener('keydown', function(e) {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                }
+            });
+        })();
+
+        // --- ENHANCED SECTION REVEAL (staggered, smooth) ---
+        (function() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        // Add staggered animation for child elements
+                        const children = entry.target.querySelectorAll('.animate-stagger');
+                        children.forEach((child, index) => {
+                            setTimeout(() => {
+                                child.classList.add('visible');
+                            }, index * 120);
+                        });
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            });
+            document.querySelectorAll('.fade-in').forEach(el => {
+                observer.observe(el);
+            });
+        })();
+
+        // --- ACCESSIBILITY: ARIA attributes for error messages ---
+        (function() {
+            document.querySelectorAll('.form-error').forEach(function(el) {
+                el.setAttribute('role', 'alert');
+                el.setAttribute('aria-live', 'polite');
+            });
+        })();
     </script>
+
 
 </body>
 </html>

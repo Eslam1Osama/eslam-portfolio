@@ -1,0 +1,11 @@
+User-agent: *
+Allow: /
+
+# Block access to assets folder if needed (uncomment if you want to block assets)
+# Disallow: /assets/
+
+# Sitemap location
+Sitemap: https://eopeak.vercel.app/sitemap.xml
+
+# Crawl delay (optional - helps with server load)
+Crawl-delay: 1
