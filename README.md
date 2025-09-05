@@ -1,4 +1,4 @@
-# 🚀 EOPeak - Professional Portfolio
+# EOPeak - Professional Portfolio
 
 <div align="center">
 
@@ -13,7 +13,7 @@
 
 *Transforming complex academic content into interactive, modern web experiences*
 
-[🌐 Live Demo]([https://eslam-portfolio-phi.vercel.app/](https://eslam-portfolio-phi.vercel.app/)) • [📧 Contact](https://mail.google.com/mail/?view=cm&to=eo6014501@gmail.com) • [💬 WhatsApp](https://wa.me/201555489089)
+[🌐 Live Demo]((https://eslam-portfolio-phi.vercel.app/)) • [📧 Contact](https://mail.google.com/mail/?view=cm&to=eo6014501@gmail.com) • [💬 WhatsApp](https://wa.me/201555489089)
 
 ---
 
@@ -434,4 +434,5 @@ This website and its content, including all text, design, code, and images, are 
 </div>
 
 </div>
+
 
