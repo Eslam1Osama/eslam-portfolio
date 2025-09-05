@@ -4,16 +4,16 @@
 
 ![EOPeak Logo](assets/logo.png)
 
-[![Portfolio](https://img.shields.io/badge/Portfolio-Live-brightgreen)](https://eopeak.vercel.app/)
-[![Technologies](https://img.shields.io/badge/Tech-Modern_Web-blue)](https://eopeak.vercel.app/)
-[![Responsive](https://img.shields.io/badge/Responsive-Mobile_First-orange)](https://eopeak.vercel.app/)
-[![SEO](https://img.shields.io/badge/SEO-Optimized-green)](https://eopeak.vercel.app/)
+[![Portfolio](https://img.shields.io/badge/Portfolio-Live-brightgreen)](https://eslam-portfolio-phi.vercel.app/)
+[![Technologies](https://img.shields.io/badge/Tech-Modern_Web-blue)](https://eslam-portfolio-phi.vercel.app/)
+[![Responsive](https://img.shields.io/badge/Responsive-Mobile_First-orange)]([https://eslam-portfolio-phi.vercel.app/](https://eslam-portfolio-phi.vercel.app/))
+[![SEO](https://img.shields.io/badge/SEO-Optimized-green)]([https://eslam-portfolio-phi.vercel.app/](https://eslam-portfolio-phi.vercel.app/))
 
 **Professional Academic Web Converter & Educational Technologist**
 
 *Transforming complex academic content into interactive, modern web experiences*
 
-[🌐 Live Demo](https://eopeak.vercel.app/) • [📧 Contact](https://mail.google.com/mail/?view=cm&to=eo6014501@gmail.com) • [💬 WhatsApp](https://wa.me/201555489089)
+[🌐 Live Demo]([https://eslam-portfolio-phi.vercel.app/](https://eslam-portfolio-phi.vercel.app/)) • [📧 Contact](https://mail.google.com/mail/?view=cm&to=eo6014501@gmail.com) • [💬 WhatsApp](https://wa.me/201555489089)
 
 ---
 
@@ -434,3 +434,4 @@ This website and its content, including all text, design, code, and images, are 
 </div>
 
 </div>
+
